@@ -1,0 +1,6 @@
+{
+  "name": "feedback-parser-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Serverless relay for feedback-parser.html so no API key ships to the browser."
+}
