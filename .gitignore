@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+
+# Secrets — never commit API keys
+story-assist/.env
+feedback-parser/config.js
+
+# Tool output that doesn't belong in the repo
+*.log
+_test_output/

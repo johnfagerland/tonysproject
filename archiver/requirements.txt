@@ -1,0 +1,2 @@
+# Fast checksums for copy verification (this is integrity checking, not security)
+xxhash==3.5.0

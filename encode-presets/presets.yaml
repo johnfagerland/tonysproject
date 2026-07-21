@@ -1,0 +1,56 @@
+# Delivery encode presets.
+#
+# To add a new stage spec: copy a block, rename it, change width/height (and
+# fit strategy if needed). That's it — it shows up in the menu automatically.
+#
+# fit strategies for when the source aspect ratio doesn't match the preset:
+#   pad     - shrink to fit, letterbox/pillarbox with pad_color (SAFE DEFAULT:
+#             nothing is cropped off, nothing is distorted)
+#   crop    - fill the frame, trimming the overflowing edges
+#   stretch - distort to exactly fill (only when the LED processor expects it)
+
+standard-1080:
+  description: "Ballroom/projector playback master, 1920x1080"
+  width: 1920
+  height: 1080
+  fps: 29.97          # constant frame rate; playback machines hate variable
+  fit: pad
+  pad_color: black
+  video_bitrate: 20M  # high bitrate: playback is from local disk, size is cheap
+  max_bitrate: 24M
+  audio_bitrate: 320k
+
+standard-1080p25:
+  description: "Same as standard-1080 for 25fps (PAL) events"
+  width: 1920
+  height: 1080
+  fps: 25
+  fit: pad
+  pad_color: black
+  video_bitrate: 20M
+  max_bitrate: 24M
+  audio_bitrate: 320k
+
+web-1080:
+  description: "Smaller file for review links / web, 1920x1080"
+  width: 1920
+  height: 1080
+  fps: 29.97
+  fit: pad
+  pad_color: black
+  video_bitrate: 10M
+  max_bitrate: 12M
+  audio_bitrate: 192k
+
+# ---- Custom stage resolutions -------------------------------------------
+# Example ultra-wide LED wall. Copy this block for each venue's spec.
+stage-4480x1080:
+  description: "Example ultra-wide LED wall (4480x1080) - content padded"
+  width: 4480
+  height: 1080
+  fps: 29.97
+  fit: pad
+  pad_color: black
+  video_bitrate: 40M   # scale bitrate with pixel count for LED walls
+  max_bitrate: 50M
+  audio_bitrate: 320k

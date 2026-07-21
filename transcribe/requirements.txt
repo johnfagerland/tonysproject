@@ -1,0 +1,6 @@
+# Transcription engine (runs locally, CPU or NVIDIA GPU)
+faster-whisper==1.1.1
+# Bundled ffmpeg so there is no PATH setup
+imageio-ffmpeg==0.6.0
+# Progress bars
+tqdm==4.67.1
